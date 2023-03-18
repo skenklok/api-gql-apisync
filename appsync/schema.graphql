@@ -1,5 +1,5 @@
 type Query {
-  weather(city: String!): Weather
+  getWeather(city: String!): Weather
 }
 
 type Weather {
