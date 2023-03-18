@@ -1,0 +1,10 @@
+type Query {
+  weather(city: String!): Weather
+}
+
+type Weather {
+  city: String
+  temperature: Float
+  condition: String
+  description: String
+}
