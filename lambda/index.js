@@ -5,6 +5,7 @@ exports.handler = async (event) => {
     const city = event.arguments.city;
 
     // Replace the URL with the actual REST API endpoint you want to call and add your API key
+    //TODO add env var
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=01b69463bdd55408c436d42cfc06e010`;
     const response = await axios.get(apiUrl);
 
