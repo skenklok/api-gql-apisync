@@ -1,6 +1,6 @@
 type Query {
   getWeather(city: String!): Weather
-  Album(artist: ID!): Album
+  album(artist: ID!): Album
 }
 
 type Weather {
