@@ -22,6 +22,11 @@ jobs:
       run: |
         npm ci
         npm run build
+        # Install axios for the Lambda function
+        cd lambda
+        npm init -y
+        npm install axios
+        cd ..
 
     - name: Deploy with CDK
       run: |
