@@ -26,6 +26,10 @@ jobs:
         npm init -y
         npm install axios
         cd ..
+        cd lambda-adapter/album
+        npm init -y
+        npm install axios
+        cd ..
 
     - name: Deploy with CDK
       run: |
