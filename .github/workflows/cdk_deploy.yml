@@ -21,7 +21,6 @@ jobs:
     - name: Install dependencies
       run: |
         npm ci
-        npm run build
         # Install axios for the Lambda function
         cd lambda
         npm init -y
