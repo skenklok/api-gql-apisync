@@ -1,10 +1,12 @@
 const axios = require('axios');
 
-exports.handler = async (event, context) => {
+exports.handler = async (event) => {
+  try {
+    
   const artist = event.arguments.artist;
   const url = `https://itunes.apple.com/search?term=${artist}&entity=album&limit=5`;
 
-  try {
+
     const response = await axios.get(url);
     const albums = response.data.results.map(result => ({
       id: result.collectionId,
