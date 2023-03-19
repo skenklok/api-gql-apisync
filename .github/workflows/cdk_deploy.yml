@@ -22,11 +22,11 @@ jobs:
       run: |
         npm ci
         # Install axios for the Lambda function
-        cd lambda-adapters/lambda
+        cd lambda-adapter/lambda
         npm init -y
         npm install axios
         cd ..
-        cd lambda-adapter/album
+        cd album
         npm init -y
         npm install axios
         cd ..
