@@ -1,5 +1,7 @@
 type Query {
   getWeather(city: String!): Weather
+  albums: [Album!]!
+  album(id: ID!): Album
 }
 
 type Weather {
@@ -8,3 +10,21 @@ type Weather {
   condition: String
   description: String
 }
+
+type Album {
+  id: ID!
+  title: String!
+  artist: String!
+  releaseYear: Int!
+  genre: String
+  tracks: [Track!]!
+}
+
+type Track {
+  id: ID!
+  title: String!
+  duration: Int!
+  composer: String
+  lyrics: String
+}
+
