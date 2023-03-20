@@ -18,7 +18,7 @@ exports.handler = async (event) => {
 
     return albums;
   } catch (error) {
-    console.error(error);
+    //console.error(error);
     throw new Error('Failed to fetch albums from iTunes API');
   }
 };
