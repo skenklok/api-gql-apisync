@@ -18,7 +18,7 @@ exports.handler = async (event) => {
 
     return weatherData;
   } catch (error) {
-    console.error(error);
+   // console.error(error);
 
     return {
       error: 'An error occurred while calling the weather API',
