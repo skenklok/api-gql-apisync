@@ -1,4 +1,4 @@
-# Weather GraphQL API using AWS AppSync and Lambda
+# GraphQL API layer using AWS AppSync and Lambda adapters
 
 This repository contains a serverless GraphQL API built with AWS CDK, AppSync, and Lambda. The API allows you to fetch weather data for a specific city.
 
