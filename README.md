@@ -6,11 +6,11 @@ This repository provides an example of how to build an AWS AppSync API with Lamb
 
 The architecture of this example is based on the following components:
 
-AWS AppSync API: This is the GraphQL API that we will be building using the AWS AppSync service.
-AWS Lambda functions: These are the data sources for the AppSync API. We have two Lambda functions in this example:
-weather: This function returns the weather for a specified location by making a REST API call to a weather service.
-album: This function returns a list of albums for a specified artist by making a REST API call to the iTunes API.
-AWS CDK: This is the infrastructure as code tool we use to deploy our architecture. We use CDK to define the API, the Lambda functions, and the necessary permissions and mappings between them.
+- AWS AppSync API: This is the GraphQL API that we will be building using the AWS AppSync service.
+- AWS Lambda functions: These are the data sources for the AppSync API. We have two Lambda functions in this example:
+- weather: This function returns the weather for a specified location by making a REST API call to a weather service.
+- album: This function returns a list of albums for a specified artist by making a REST API call to the iTunes API.
+- AWS CDK: This is the infrastructure as code tool we use to deploy our architecture. We use CDK to define the API, the Lambda functions, and the necessary permissions and mappings between them.
 
 The following diagram shows the high-level architecture of this example:
 
@@ -45,12 +45,12 @@ The following diagram shows the high-level architecture of this example:
 
 1. Clone the repository:
 
-git clone https://github.com/your-github-username/your-repo-name.git
+git clone https://github.com/skenklok/api-gql-apisync.git
 
 
 2. Navigate to the project directory:
 
-cd your-repo-name
+cd api-gql-apisync
 
 
 3. Install the dependencies:
