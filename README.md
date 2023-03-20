@@ -57,6 +57,57 @@ cd your-repo-name
 
 npm install
 
+### Repository Overview
+
+This repository contains the source code for a serverless GraphQL API built with AWS AppSync and AWS Lambda. The API provides two main features: retrieving weather data and retrieving albums from iTunes. The API is secured with an API key and includes two resolvers that leverage AWS Lambda as the data source.
+
+The repository contains the following directories and files:
+
+```yaml
+
+- .gitignore
+- README.md
+- appsync/
+  - schema.graphql
+- cdk/
+  - bin/
+    - cdk.ts
+  - lib/
+    - api-gql-appsync-stack.ts
+  - package.json
+  - tsconfig.json
+- lambda-adapters/
+  - album/
+    - index.js
+  - weather/
+    - index.js
+- package.json
+
+```
+
+# Repository Structure
+The repository contains the following structure:
+
+- appsync/: A directory containing the schema definition file for the AppSync API.
+
+- cdk/: A directory containing the AWS CDK stack definition for deploying the AppSync API and Lambda functions.
+
+- bin/: A directory containing the entry point file for the AWS CDK app.
+
+- lib/: A directory containing the stack definition file for the AppSync API and Lambda functions.
+
+- package.json: A file containing the dependencies and scripts for the AWS CDK app.
+
+- tsconfig.json: A file containing the TypeScript configuration for the AWS CDK app.
+
+- lambda-adapters/: A directory containing the Lambda function code for fetching album and weather data.
+
+- album/: A directory containing the Lambda function code for fetching album data from the iTunes API.
+
+- weather/: A directory containing the Lambda function code for fetching weather data from the OpenWeatherMap API.
+
+- package.json: A file containing the dependencies and scripts for the Lambda functions.
+
 
 ### Deployment
 
