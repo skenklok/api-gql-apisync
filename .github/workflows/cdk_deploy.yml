@@ -40,3 +40,14 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: ${{ secrets.AWS_REGION }}
+
+    # check if tests passed
+      - name: Check if tests passed
+        uses: chrispat/pr-check@v1
+        with:
+          name: Test Results
+          status: ${{ job.status }}
+          token: ${{ secrets.G_TOKEN }}
+          error_msg: "Tests failed, please fix before merging"
+
+
