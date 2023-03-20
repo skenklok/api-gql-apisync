@@ -49,3 +49,4 @@ jobs:
         status: ${{ job.status }}
         token: ${{ secrets.G_TOKEN }}
         error_msg: "Tests failed, please fix before merging"
+
