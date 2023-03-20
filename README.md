@@ -1,6 +1,38 @@
-# GraphQL API layer using AWS AppSync and Lambda adapters
 
-This repository contains a serverless GraphQL API built with AWS CDK, AppSync, and Lambda. The API allows you to fetch weather data for a specific city.
+# GraphQL AppSync with Lambda Data Sources 
+
+This repository provides an example of how to build an AWS AppSync API with Lambda data sources using the AWS CDK.
+
+## Architecture
+
+The architecture of this example is based on the following components:
+
+AWS AppSync API: This is the GraphQL API that we will be building using the AWS AppSync service.
+AWS Lambda functions: These are the data sources for the AppSync API. We have two Lambda functions in this example:
+weather: This function returns the weather for a specified location by making a REST API call to a weather service.
+album: This function returns a list of albums for a specified artist by making a REST API call to the iTunes API.
+AWS CDK: This is the infrastructure as code tool we use to deploy our architecture. We use CDK to define the API, the Lambda functions, and the necessary permissions and mappings between them.
+
+The following diagram shows the high-level architecture of this example:
+
+```yaml
+      ┌─────────────┐
+      │   AppSync   │
+      │     API     │
+      └──────┬──────┘
+             │
+    ┌────────┴─────────┐
+    │ AWS Lambda:      │
+    │  - weather       │
+    │  - album         │
+    └────────┬─────────┘
+             │
+    ┌────────┴─────────┐
+    │   REST APIs:     │
+    │ - Weather API    │
+    │ - iTunes API     │
+    └──────────────────┘
+```
 
 ## Getting Started
 
@@ -33,15 +65,14 @@ npm install
 
 aws configure
 
-
 This command will prompt you to enter your AWS access key ID, secret access key, default region, and output format.
 
 2. Deploy the project using AWS CDK:
 
-npx cdk deploy
+cdk bootstrap # Only required once per account and region
+cdk deploy
 
-
-After the deployment is complete, you will see the GraphQL API URL and API key in the output.
+After the deployment is complete, you will see the outputs of the stack in your terminal, including the GraphQL API endpoint, API key, and other useful information.
 
 ### Testing
 
@@ -55,11 +86,26 @@ x-api-key: Your_ApiGqlAppsyncStack_GraphQLAPI_KEY
 
 2. Set the request URL to `ApiGqlAppsyncStack.GraphQLAPI_URL`.
 
-3. In the request body, add a GraphQL query. For example, to get the weather for "New York":
+3. To test the API, you can use the AWS AppSync console or a GraphQL client like GraphiQL or Apollo Studio. You will need to provide the API key in the x-api-key header for authentication.
 
-```json
-{
-  "query": "query { getWeather(city: \"New York\") { city temperature condition description }}"
+Here are some example queries you can run:
+
+```graphql
+query {
+  getWeather(location: "Seattle") {
+    temperature
+    description
+  }
+}
+
+query {
+  album(artist: "Metallica") {
+    id
+    name
+    artist
+    artworkUrl
+    releaseDate
+  }
 }
 ```
 
@@ -68,5 +114,3 @@ x-api-key: Your_ApiGqlAppsyncStack_GraphQLAPI_KEY
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-Replace `your-github-username` and `your-repo-name` with your actual GitHub username and repository name.
